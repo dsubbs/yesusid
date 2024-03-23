@@ -36,7 +36,7 @@ class RateLimiter:
         """
 
         try:
-            await self.limiter.try_acquire(userid)
+            self.limiter.try_acquire(userid)
             return False
         except BucketFullException:
             return True
