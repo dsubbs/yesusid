@@ -3,8 +3,10 @@ import os
 from logging.handlers import RotatingFileHandler
 
 # removing old logs file if they exist.
-try: os.remove("logs.txt")
-except: pass
+try:
+    os.remove("logs.txt")
+except:
+    pass
 
 logging.basicConfig(
     level=logging.INFO,
@@ -15,6 +17,7 @@ logging.basicConfig(
         logging.StreamHandler()])
 
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
+
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
